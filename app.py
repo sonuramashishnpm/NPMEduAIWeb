@@ -18,8 +18,10 @@ DB_DIR = "vector_dbs"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(DB_DIR, exist_ok=True)
 
-llm = Ollama()
-MODEL = "llama3.2"
+llm = Ollama(
+    model="llama3.2",
+    temperature=0.8
+)
 embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
 
 # ---------------- ROUTES ---------------- #
